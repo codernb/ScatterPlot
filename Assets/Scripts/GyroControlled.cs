@@ -22,6 +22,9 @@ public class GyroControlled : MonoBehaviour
     
     private void UpdateView()
     {
+        ConsoleController.Log(Input.gyro.rotationRate);
+        transform.Rotate(Input.gyro.rotationRate);
+        return;
         Quaternion offsetRotation = gyroInitialRotation * Input.gyro.attitude;
         offsetRotation.z *= -1;
         offsetRotation.w *= -1;
