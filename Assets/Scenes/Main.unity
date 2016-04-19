@@ -1884,7 +1884,7 @@ GameObject:
   - 23: {fileID: 1043938973}
   - 114: {fileID: 1043938976}
   m_Layer: 5
-  m_Name: FrontSideStick
+  m_Name: UpSideStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2304,7 +2304,7 @@ GameObject:
   - 23: {fileID: 1391648648}
   - 114: {fileID: 1391648651}
   m_Layer: 5
-  m_Name: UpStick
+  m_Name: FrontStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2938,8 +2938,8 @@ GameObject:
   - 81: {fileID: 1691622365}
   - 114: {fileID: 1691622370}
   - 114: {fileID: 1691622371}
-  - 114: {fileID: 1691622372}
   - 114: {fileID: 1691622373}
+  - 114: {fileID: 1691622372}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3043,11 +3043,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1691622364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c66ecaddb4446f68055a8ecac49520, type: 3}
+  m_Script: {fileID: 11500000, guid: 890548a6830044643a61041e216af4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TransformGestureScript: {fileID: 1043938976}
-  MoveSpeed: .00100000005
+  MoveSpeed: .00999999978
   MaxSpeed: 1
 --- !u!114 &1691622373
 MonoBehaviour:
@@ -3057,11 +3057,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1691622364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2fb24cf6e5094490bf3c6770199112e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6515c926927f8484cae60922141539b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TransformGestureScript: {fileID: 1391648651}
-  MoveSpeed: .00100000005
+  MoveSpeed: .00999999978
   MaxSpeed: 1
 --- !u!1 &1716376949
 GameObject:
@@ -3365,7 +3365,7 @@ GameObject:
   - 20: {fileID: 1848581348}
   - 114: {fileID: 1848581345}
   m_Layer: 5
-  m_Name: FrontSideStickCamera
+  m_Name: UpSideStickCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3482,7 +3482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1867071844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3839,7 +3839,7 @@ GameObject:
   - 20: {fileID: 2030526688}
   - 114: {fileID: 2030526685}
   m_Layer: 5
-  m_Name: UpStickCamera
+  m_Name: FrontStickCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

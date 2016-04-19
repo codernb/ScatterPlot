@@ -2,7 +2,7 @@
 using System.Collections;
 using TouchScript.Gestures;
 
-public class UpStickControlled : MonoBehaviour
+public class FrontStickControlled : MonoBehaviour
 {
     
     public TransformGesture TransformGestureScript;
@@ -30,7 +30,7 @@ public class UpStickControlled : MonoBehaviour
         var diff = (TransformGestureScript.ScreenPosition - StartPosition) * MoveSpeed;
         var position = transform.position;
         var diffY = diff.y > MaxSpeed ? MaxSpeed : diff.y < -MaxSpeed ? -MaxSpeed : diff.y;
-        position += transform.up * diffY;
+        position += transform.forward * diffY;
         transform.position = position;
     }
 }
