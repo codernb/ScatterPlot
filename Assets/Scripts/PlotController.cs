@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlotController : MonoBehaviour {
 
+	public GameObject UICameras;
     public GameObject Dot;
     public Canvas Options;
     public int GridWidth = 600;
@@ -20,6 +21,9 @@ public class PlotController : MonoBehaviour {
     private List<GameObject> dots = new List<GameObject>();
     private int axisToSelect = -1;
 
+	public void Start() {
+		UICameras.SetActive (false);
+	}
     public float XScale {
         set {
             if (selectedAxisKeys[0] < 0)
