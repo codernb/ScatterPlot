@@ -1149,9 +1149,9 @@ RectTransform:
   - {fileID: 1716376953}
   m_Father: {fileID: 28167695}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 230, y: -108}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 230, y: -10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &444157197
@@ -2124,9 +2124,9 @@ RectTransform:
   - {fileID: 42021771}
   m_Father: {fileID: 28167695}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 91, y: -108}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 91, y: -10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &982711982
@@ -2939,6 +2939,7 @@ GameObject:
   - 136: {fileID: 1391648649}
   - 23: {fileID: 1391648648}
   - 114: {fileID: 1391648651}
+  - 95: {fileID: 1391648652}
   m_Layer: 5
   m_Name: FrontStick
   m_TagString: Untagged
@@ -3030,6 +3031,23 @@ MonoBehaviour:
   screenTransformThreshold: 0.1
   projection: 0
   projectionPlaneNormal: {x: 0, y: 0, z: 1}
+--- !u!95 &1391648652
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391648646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76c0d51bd2dba47d4a8215959b93bc4b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1450395146
 GameObject:
   m_ObjectHideFlags: 0
