@@ -726,6 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2345fa71b7d4c4fb88cd9b6412f2d218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UICameras: {fileID: 216657175}
   Dot: {fileID: 154896, guid: 3c1a7d7ee180442219661f6ed6755264, type: 2}
   Options: {fileID: 28167698}
   GridWidth: 600
@@ -810,7 +811,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 216657176}
-  - 111: {fileID: 216657177}
   m_Layer: 5
   m_Name: UICameras
   m_TagString: Untagged
@@ -825,7 +825,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 216657175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 0, z: 20}
+  m_LocalPosition: {x: 6.5, y: 5, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1474656206}
@@ -833,20 +833,6 @@ Transform:
   - {fileID: 2030526689}
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!111 &216657177
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 216657175}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &317011804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2039,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 864445586}
   - 114: {fileID: 864445587}
+  - 95: {fileID: 864445588}
   m_Layer: 5
   m_Name: Compass
   m_TagString: Untagged
@@ -2090,6 +2077,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc5b795fc40a436282c52d9c5e7ca5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &864445588
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 864445585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9305f28924abb46fe8db69c454263646, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &932555342
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2335,7 @@ GameObject:
   - 135: {fileID: 1043938974}
   - 23: {fileID: 1043938973}
   - 114: {fileID: 1043938976}
+  - 95: {fileID: 1043938977}
   m_Layer: 5
   m_Name: UpSideStick
   m_TagString: Untagged
@@ -2421,6 +2426,23 @@ MonoBehaviour:
   screenTransformThreshold: 0.1
   projection: 0
   projectionPlaneNormal: {x: 0, y: 0, z: 1}
+--- !u!95 &1043938977
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1043938971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 883d16fac7d844a76a534f14a373e282, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1164217341
 GameObject:
   m_ObjectHideFlags: 0
