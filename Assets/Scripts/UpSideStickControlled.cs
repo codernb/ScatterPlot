@@ -8,6 +8,7 @@ public class UpSideStickControlled : MonoBehaviour
     public TransformGesture TransformGestureScript;
     public float MoveSpeed = 0.1f;
     public float MaxSpeed = 1;
+	public float DeadZone = 0.2f;
 
     private bool Moving;
     private Vector2 StartPosition;
@@ -27,7 +28,10 @@ public class UpSideStickControlled : MonoBehaviour
     {
         if (!Moving)
             return;
-        var diff = (TransformGestureScript.ScreenPosition - StartPosition) * MoveSpeed;
+        var diff = (TransformGestureScript.ScreenPosition - StartPosition);
+		if (diff.magnitude < DeadZone)
+			return;
+		diff *= MoveSpeed;
         var position = transform.position;
         var diffX = diff.x > MaxSpeed ? MaxSpeed : diff.x < -MaxSpeed ? -MaxSpeed : diff.x;
         var diffY = diff.y > MaxSpeed ? MaxSpeed : diff.y < -MaxSpeed ? -MaxSpeed : diff.y;
