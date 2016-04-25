@@ -14,6 +14,7 @@ public class PlotController : MonoBehaviour {
     public TextMesh[] Labels = new TextMesh[3];
     public Slider[] ScaleSliders = new Slider[3];
     public Transform[] Axes = new Transform[3];
+	public Text ColorText;
     private char[] newLineDelimiter = new char[] { '\n' };
     private char[] commaDelimiter = new char[] { ',' };
     private string[] axisKeys;
@@ -38,7 +39,7 @@ public class PlotController : MonoBehaviour {
             var scale = Axes[0].localScale;
             var pos = Axes[0].position;
             scale.x = max;
-            pos.x = max / 2 - 0.5f;
+			pos.x = max / 2;
             Axes[0].localScale = scale;
             Axes[0].position = pos;
         }
@@ -58,7 +59,7 @@ public class PlotController : MonoBehaviour {
             var scale = Axes[1].localScale;
             var pos = Axes[1].position;
             scale.y = max;
-            pos.y = max / 2 - 0.5f;
+            pos.y = max / 2;
             Axes[1].localScale = scale;
             Axes[1].position = pos;
         }
@@ -78,7 +79,7 @@ public class PlotController : MonoBehaviour {
             var scale = Axes[2].localScale;
             var pos = Axes[2].position;
             scale.z = max;
-            pos.z = max / 2 - 0.5f;
+			pos.z = max / 2;
             Axes[2].localScale = scale;
             Axes[2].position = pos;
         }
@@ -130,29 +131,52 @@ public class PlotController : MonoBehaviour {
         axisToSelect = 2;
     }
 
+	public void SelectColor() {
+		if (axisKeys == null)
+			return;
+		axisToSelect = 3;
+	}
+
     void OnGUI() {
         if (axisToSelect > -1) {
             Options.enabled = false;
             var gridRectange = new Rect(Screen.width / 2 - GridWidth / 2, Screen.height / 2 - GridHeight / 2, GridWidth, GridHeight);
             var selection = GUI.SelectionGrid(gridRectange, -1, axisKeys, 4);
-            selectedAxisKeys[axisToSelect] = selection;
             if (selection > -1) {
-                foreach (var d in dots)
-                    d.GetComponent<DotController>().SetAxis(axisToSelect, selection);
-                ScaleSliders[axisToSelect].value = 1;
-                Options.enabled = true;
-                Labels[axisToSelect].text = axisKeys[selection];
-                switch (axisToSelect) {
-                case 0:
-                    XScale = 1;
-                    break;
-                case 1:
-                    YScale = 1;
-                    break;
-                case 2:
-                    ZScale = 1;
-                    break;
+				if (axisToSelect > 2) {
+					float min = float.MaxValue, max = float.MinValue;
+					foreach (var d in dots) {
+						var val = d.GetComponent<DotController>().Values[selection];
+						min = Mathf.Min(min, val);
+						max = Mathf.Max(max, val);
+					}
+					max -= min;
+					foreach (var d in dots) {
+						var val = d.GetComponent<DotController>().Values[selection] - min;
+						var ratio = val / max;
+						var hsb = new HSBColor(0.908333333f, ratio, 0.65f);
+						d.GetComponent<SpriteRenderer>().color = hsb.ToColor();
+					}
+					ColorText.text = axisKeys[selection];
+				} else {
+					selectedAxisKeys[axisToSelect] = selection;
+					foreach (var d in dots)
+						d.GetComponent<DotController>().SetAxis(axisToSelect, selection);
+					ScaleSliders[axisToSelect].value = 1;
+					Labels[axisToSelect].text = axisKeys[selection];
+					switch (axisToSelect) {
+					case 0:
+						XScale = 1;
+						break;
+					case 1:
+						YScale = 1;
+						break;
+					case 2:
+						ZScale = 1;
+						break;
+					}
                 }
+				Options.enabled = true;
                 axisToSelect = -1;
             }
         }
