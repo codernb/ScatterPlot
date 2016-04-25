@@ -14,6 +14,7 @@ public class PlotController : MonoBehaviour {
     public TextMesh[] Labels = new TextMesh[3];
     public Slider[] ScaleSliders = new Slider[3];
     public Transform[] Axes = new Transform[3];
+	public Text ColorText;
     private char[] newLineDelimiter = new char[] { '\n' };
     private char[] commaDelimiter = new char[] { ',' };
     private string[] axisKeys;
@@ -145,17 +146,18 @@ public class PlotController : MonoBehaviour {
 				if (axisToSelect > 2) {
 					float min = float.MaxValue, max = float.MinValue;
 					foreach (var d in dots) {
-						var val = d.GetComponent<DotController>().Values [selection];
+						var val = d.GetComponent<DotController>().Values[selection];
 						min = Mathf.Min(min, val);
 						max = Mathf.Max(max, val);
 					}
 					max -= min;
 					foreach (var d in dots) {
-						var val = d.GetComponent<DotController>().Values [selection] - min;
+						var val = d.GetComponent<DotController>().Values[selection] - min;
 						var ratio = val / max;
 						var hsb = new HSBColor(0.908333333f, ratio, 0.65f);
 						d.GetComponent<SpriteRenderer>().color = hsb.ToColor();
 					}
+					ColorText.text = axisKeys[selection];
 				} else {
 					selectedAxisKeys[axisToSelect] = selection;
 					foreach (var d in dots)
