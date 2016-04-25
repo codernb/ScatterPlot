@@ -8,7 +8,7 @@ public class MouseControlled : MonoBehaviour {
     private Vector3 rot = Vector3.zero;
     private bool locked = false;
 
-    void Start() {
+	void Start() {
 		#if !UNITY_EDITOR
 		enabled = false;
 		#else
