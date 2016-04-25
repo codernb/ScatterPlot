@@ -18,15 +18,13 @@ public class GyroControlled : MonoBehaviour {
     }
 
     private void UpdateView() {
-        Quaternion offsetRotation = gyroInitialRotation * Input.gyro.attitude;
+        var offsetRotation = gyroInitialRotation * Input.gyro.attitude;
         offsetRotation.z *= -1;
         offsetRotation.w *= -1;
         transform.rotation = initialRotation * offsetRotation;
     }
 
     public void Calibrate() {
-        var rotation = Quaternion.Inverse(Input.gyro.attitude);
-        print(String.Format("Calibrated GyroControlled: {0}", rotation));
-        gyroInitialRotation = rotation;
+		gyroInitialRotation = Quaternion.Inverse(Input.gyro.attitude);
     }
 }
