@@ -19,10 +19,12 @@ public class MouseControlled : MonoBehaviour {
     void Update() {
         if (Input.GetButtonDown("Jump"))
             toggleCursorLock();
-        if (!locked)
-            return;
-        rot.x = Input.GetAxis("Mouse Y");
-        rot.y = Input.GetAxis("Mouse X");
+		rot.x = Input.GetAxis("Vertical");
+		rot.y = Input.GetAxis ("Horizontal");
+		if (locked) {
+				rot.x += Input.GetAxis ("Mouse Y");
+				rot.y += Input.GetAxis ("Mouse X");
+		}
         transform.Rotate(rot);
     }
 

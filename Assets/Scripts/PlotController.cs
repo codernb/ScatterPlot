@@ -13,8 +13,9 @@ public class PlotController : MonoBehaviour {
     public int GridHeight = 300;
     public TextMesh[] Labels = new TextMesh[3];
     public Slider[] ScaleSliders = new Slider[3];
-    public Transform[] Axes = new Transform[3];
+	public AxesController[] Axes = new AxesController[3];
 	public Text ColorText;
+
     private char[] newLineDelimiter = new char[] { '\n' };
     private char[] commaDelimiter = new char[] { ',' };
     private string[] axisKeys;
@@ -36,12 +37,7 @@ public class PlotController : MonoBehaviour {
                 max = Mathf.Max(max, position.x);
                 d.transform.position = position;
             }
-            var scale = Axes[0].localScale;
-            var pos = Axes[0].position;
-            scale.x = max;
-			pos.x = max / 2;
-            Axes[0].localScale = scale;
-            Axes[0].position = pos;
+			Axes [0].ScaleX = max;
         }
     }
 
@@ -55,13 +51,8 @@ public class PlotController : MonoBehaviour {
                 position.y = d.GetComponent<DotController>().Values[selectedAxisKeys[1]] * value;
                 max = Mathf.Max(max, position.y);
                 d.transform.position = position;
-            }
-            var scale = Axes[1].localScale;
-            var pos = Axes[1].position;
-            scale.y = max;
-            pos.y = max / 2;
-            Axes[1].localScale = scale;
-            Axes[1].position = pos;
+			}
+			Axes [1].ScaleY = max;
         }
     }
 
@@ -75,13 +66,8 @@ public class PlotController : MonoBehaviour {
                 position.z = d.GetComponent<DotController>().Values[selectedAxisKeys[2]] * value;
                 max = Mathf.Max(max, position.z);
                 d.transform.position = position;
-            }
-            var scale = Axes[2].localScale;
-            var pos = Axes[2].position;
-            scale.z = max;
-			pos.z = max / 2;
-            Axes[2].localScale = scale;
-            Axes[2].position = pos;
+			}
+			Axes [2].ScaleZ = max;
         }
     }
 
