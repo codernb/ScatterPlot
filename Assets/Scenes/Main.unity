@@ -1614,9 +1614,12 @@ Transform:
   m_Father: {fileID: 1353217981}
   m_RootOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!23 &501480290
 =======
+=======
+>>>>>>> f053ae4189ac4466393551d227d4f80951097107
 --- !u!23 &487685223
 >>>>>>> f053ae4189ac4466393551d227d4f80951097107
 MeshRenderer:
@@ -2552,6 +2555,9 @@ Transform:
   - {fileID: 1164217342}
   m_Father: {fileID: 0}
   m_RootOrder: 9
+<<<<<<< HEAD
+>>>>>>> f053ae4189ac4466393551d227d4f80951097107
+=======
 >>>>>>> f053ae4189ac4466393551d227d4f80951097107
 --- !u!1 &837507766
 GameObject:
@@ -3633,7 +3639,10 @@ Transform:
   m_Father: {fileID: 765435175}
   m_RootOrder: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+=======
+>>>>>>> f053ae4189ac4466393551d227d4f80951097107
 =======
 >>>>>>> f053ae4189ac4466393551d227d4f80951097107
 --- !u!23 &1353217982
